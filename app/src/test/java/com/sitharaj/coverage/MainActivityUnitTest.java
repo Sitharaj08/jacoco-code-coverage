@@ -1,15 +1,13 @@
 package com.sitharaj.coverage;
 
-import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.Robolectric;
 import org.robolectric.RobolectricTestRunner;
-
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.Is.is;
 
 @RunWith(RobolectricTestRunner.class)
 public class MainActivityUnitTest {
@@ -18,9 +16,10 @@ public class MainActivityUnitTest {
     public void shouldHideButtonAfterClick() {
         MainActivity activity = Robolectric.setupActivity(MainActivity.class);
 
-        Button button = activity.findViewById(R.id.hide);
+        Button button = activity.findViewById(R.id.changeText);
+        TextView textView = activity.findViewById(R.id.text);
         button.performClick();
 
-        assertThat(button.getVisibility(), is(View.GONE));
+        Assert.assertEquals(button.getText().toString(), textView.getText().toString());
     }
 }

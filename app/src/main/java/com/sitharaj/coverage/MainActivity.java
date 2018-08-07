@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -15,17 +16,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        findViewById(R.id.button).setOnClickListener(this);
-        findViewById(R.id.hide).setOnClickListener(this);
+        findViewById(R.id.changeText).setOnClickListener(this);
+        findViewById(R.id.changeTextAgain).setOnClickListener(this);
         text = (TextView) findViewById(R.id.text);
     }
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.button) {
-            text.setText("Hello World!");
-        } else {
-            v.setVisibility(View.GONE);
+        if (v.getId() == R.id.changeText) {
+            text.setText(((Button) v).getText().toString());
+        } else if (v.getId() == R.id.changeTextAgain) {
+            text.setText(((Button) v).getText().toString());
         }
     }
 }

@@ -3,6 +3,7 @@ package com.sitharaj.coverage;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import android.test.suitebuilder.annotation.LargeTest;
+import android.widget.Button;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -25,8 +26,9 @@ public class MainActivityTest {
 
     @Test
     public void shouldUpdateTextAfterButtonClick() {
-        onView(withId(R.id.button)).perform(click());
-
-        onView(withId(R.id.text)).check(matches(withText("Hello World!")));
+        onView(withId(R.id.changeTextAgain)).perform(click());
+        String expectedText = ((Button)mActivityRule.getActivity().findViewById(R.id.changeTextAgain)).getText().toString();
+        onView(withId(R.id.text)).check(matches(withText(expectedText)));
     }
+
 }

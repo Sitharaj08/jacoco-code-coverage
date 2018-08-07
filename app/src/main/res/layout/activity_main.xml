@@ -8,18 +8,18 @@
         android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello" />
+        android:text="Simple Text" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/changeText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Click Me!" />
+        android:text="Change Text" />
 
     <Button
-        android:id="@+id/hide"
+        android:id="@+id/changeTextAgain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Don't Click Me!" />
+        android:text="Change Text Again" />
 
 </LinearLayout>
